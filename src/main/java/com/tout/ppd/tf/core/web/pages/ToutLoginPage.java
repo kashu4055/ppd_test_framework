@@ -9,18 +9,18 @@ import com.tout.ppd.tf.core.web.WebPage;
 import com.tout.ppd.tf.core.web.elements.Button;
 import com.tout.ppd.tf.core.web.elements.TextInput;
 
-public class ToutLoginStep2Page extends WebPage<ToutLoginStep2Page>{
+public class ToutLoginPage extends WebPage<ToutLoginPage>{
 	private static final Environment ENV = Config.getConfig().getEnvironmentSettings();
 	private static final By EMAIL_INPUT_LOCATOR = By.id("signin_user_email");
 	private static final By PASSWORD_INPUT_LOCATOR = By.id("signin_user_password");
-	private static final By SIGN_IN_BUTTON_LOCATOR = By.name("commit");
+	private static final By SIGN_IN_BUTTON_LOCATOR = By.xpath("//input[@value='Sign In']");
 	
-	public ToutLoginStep2Page(WebDriver driver) {
+	public ToutLoginPage(WebDriver driver) {
 		super(driver);
 	}
 
 	@Override
-	public ToutLoginStep2Page load() {
+	public ToutLoginPage load() {
 		throw new RuntimeException("ToutLoginStep2Page is not intended to be loaded.");
 	}
 

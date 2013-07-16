@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public abstract class WebComponent<T extends WebComponent<T>> extends Component<T>{
 
@@ -31,7 +32,7 @@ public abstract class WebComponent<T extends WebComponent<T>> extends Component<
 		return getWebElement().getText();
 	}
 	
-	protected WebElement getWebElement(){
+	public WebElement getWebElement(){
 		return driver.findElement(findByMethod);
 	}
 

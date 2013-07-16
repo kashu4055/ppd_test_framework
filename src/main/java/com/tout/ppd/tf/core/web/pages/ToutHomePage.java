@@ -11,6 +11,7 @@ public class ToutHomePage extends WebPage<ToutHomePage>{
 
 	private static final By LOGIN_LINK_LOCATOR = By.xpath("//a[text()='Login']");
 	private static final By NEW_TOUT_BUTTON_LOCATOR = By.id("new_tout");
+	private static final By SWITCH_MODE_LINK_LOCATOR = By.xpath("//a[text()='Other']");
 	
 	public ToutHomePage(WebDriver driver) {
 		super(driver);
@@ -27,9 +28,9 @@ public class ToutHomePage extends WebPage<ToutHomePage>{
 				getNewToutButton().isAvailable();
 	}
 
-	public ToutLoginStep1Page goToToutLoginStep1Page(){
-		getLoginLink().click();
-		return new ToutLoginStep1Page(driver).waitUntilAvailable();
+	public ToutLoginPage goToToutLoginPage(){
+		getSwitchModeLink().click();
+		return new ToutLoginPage(driver).waitUntilAvailable();
 	}
 	
 	private Link getLoginLink(){
@@ -37,7 +38,11 @@ public class ToutHomePage extends WebPage<ToutHomePage>{
 	}
 	
 	private Button getNewToutButton() {
-		return new Button(driver, NEW_TOUT_BUTTON_LOCATOR);
+		return new Button(driver, NEW_TOUT_BUTTON_LOCATOR);		
+	}
+	
+	private Link getSwitchModeLink(){
+		return new Link(driver, SWITCH_MODE_LINK_LOCATOR);
 	}
 	
 }

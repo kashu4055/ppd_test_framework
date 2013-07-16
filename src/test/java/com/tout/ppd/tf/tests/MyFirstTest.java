@@ -11,9 +11,9 @@ public class MyFirstTest extends BaseTest{
 	public void someTest(){
 		new PremiumParterPage(driver)
 			.loadAsAnonymousUser()
-			.goToToutLoginStep1Page()
-			.switchToOtherMode()
-			.loginAsSuperAdmin();
+			.goToToutLoginPage()
+			.loginAsSuperAdmin()
+			.logOut();
 	}
 	
 }

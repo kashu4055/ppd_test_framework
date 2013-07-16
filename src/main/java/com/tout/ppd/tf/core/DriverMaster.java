@@ -3,6 +3,7 @@ package com.tout.ppd.tf.core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.opera.core.systems.OperaDriver;
@@ -16,7 +17,9 @@ public class DriverMaster {
 		BrowserType browserType = BrowserType.get(browserKey);
 		switch (browserType) {
 			case FIREFOX:
-				driver = new FirefoxDriver();
+				FirefoxProfile profile = new FirefoxProfile();   
+				profile.setEnableNativeEvents(true);     
+				driver = new FirefoxDriver(profile);
 				break;
 			case CHROME:
 				driver = new ChromeDriver();
