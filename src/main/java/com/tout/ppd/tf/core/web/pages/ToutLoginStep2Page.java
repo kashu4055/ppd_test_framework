@@ -31,10 +31,11 @@ public class ToutLoginStep2Page extends WebPage<ToutLoginStep2Page>{
 				getSignInButton().isAvailable();
 	}
 	
-	public void loginAsSuperAdmin(){
+	public OrganizationListPage loginAsSuperAdmin(){
 		getEmailInput().inputText(ENV.sadmin_login);
 		getPasswordInput().inputText(ENV.sadmin_password);
 		getSignInButton().click();
+		return new OrganizationListPage(driver).waitUntilAvailable();
 	}
 	
 	private TextInput getEmailInput(){
