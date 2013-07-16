@@ -1,0 +1,23 @@
+environments:
+  
+  dev:
+    schema: http
+    host: partner.dev
+    port: 3000
+    sadmin_login: julia.panasiuk@gmail.com
+    sadmin_password: 5rdXCft6
+    
+
+  qa:
+    schema: http
+    host: partner.qa.kicktag.com
+    port: 80
+    sadmin_login: julia.panasiuk@gmail.com
+    sadmin_password: abcd1234
+
+  prod:
+    schema: http
+    host: partner.tout.com
+    port: 80
+    sadmin_login: julia.panasiuk@gmail.com
+    sadmin_password: abcd1234
